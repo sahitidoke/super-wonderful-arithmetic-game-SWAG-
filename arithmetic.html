@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+  
+        <script src="https://randojs.com/1.0.0.js"></script>
+        <script>
+let score =0;
+       /*  
+          var timer = document.getElementById("timer");
+  var count = 25;
+  var intervalId = setInterval(function() {
+    if (count >= 0) {
+      timer.innerHTML = count;
+      count--;
+    } else {
+      clearInterval(intervalId);
+      alert("Time's Up: " + score);
+      return;
+    }
+  }, 1000); */
+          
+          
+    function arithmeticGame(){
+  			var y = rando(0,50);
+        document.getElementById("myNumber").innerHTML = y;
+  var x = rando(0,50);
+  document.getElementById("myNumber2").innerHTML = x;
+  		}
+
+
+        function processForm() {
+        if (document.getElementById("ans").value == parseInt(document.getElementById("myNumber").innerHTML) + parseInt(document.getElementById("myNumber2").innerHTML)){
+        	document.getElementById("answer-status").innerHTML = "Good job!";
+          arithmeticGame();
+          document.getElementById("ans").value="";
+          score= score+1;
+          document.getElementById("score").innerHTML = score;
+            
+        } else { 
+        	document.getElementById("answer-status").innerHTML = "Try again!";
+            document.getElementById("ans").value="";
+        
+        }
+        
+        }
+        
+     </script>
+        <style>
+
+    body {
+      background-color: #FEFBE7; 
+      text-align: center;
+          }
+
+    span {
+      font-size: 100px;
+    }
+
+    button {
+      padding-left: 20px;
+      font-size: 35px;
+    }
+          
+    input {
+      font-size: 45px;
+    }
+
+
+  #space {
+    padding-top: 20x;
+  }
+          
+    a {
+      color: #000000;
+      
+      text-decoration: none;
+      background-color: #c28989;
+      display: inline-block;
+    padding: .5rem;
+    margin: 0 .5rem 1rem;
+    width: 45%;
+    border-radius: .5rem;
+
+    box-shadow: -2px 5px 10px rgb(0 0 0 / 20%);
+    }
+
+    #answer-status {
+      font-size: 100px;
+    }
+
+          
+        </style>
+    </head>
+    <body onload="arithmeticGame();">
+
+      
+      <h2 id="timer">30</h2>
+<script>
+ var timer = document.getElementById("timer");
+  var count = 30;
+  var intervalId = setInterval(function() {
+    if (count >= 0) {
+      timer.innerHTML = count;
+      count--;
+      
+    }else {
+alert("Time's Up! Your score was: " + score);
+      clearInterval(intervalId);
+    }
+      
+    }, 1000); 
+
+ 
+</script>
+
+
+      
+        <span id="myNumber"> </span> <span> + </span> <span id="myNumber2"> </span> <span>  = </span>
+         
+        <input id="ans"> </input>
+        <button onclick="processForm()"> check </button>
+    
+        <div id="answer-status"> </div>
+      <div id="space"> </div>
+      <a href="index.html"> <h2> FINISH </h2></a>
+      <div></div>
+      <span>Score: </span> <span id="score"> </span> 
+        
+    </body>
+</html>
